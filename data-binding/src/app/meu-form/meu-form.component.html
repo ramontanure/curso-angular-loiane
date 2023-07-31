@@ -1,0 +1,29 @@
+<section>
+    <article>
+        <h3>Two-way data binding</h3>
+        <div>
+            <!-- Temos um evento chamado input sempre que o campo é atualizado, sempre que for o nome vai receber o $event.target.value -->
+            <input type="text" [value]="nome" #campo (input)="nome = campo.value" />
+            <!-- Segundo
+            O angular tem uma propriedade chamada ngModel, ngModel é uma representação de uma entidade essa entidade pode ser um campo simples como string por exemplo,
+             ou até mesmo um objeto -->
+            <input type="text" [ngModel]="nome" (ngModelChange)="nome = $event" />
+
+            <!-- Two way data binding -->
+            <input type="text" [(ngModel)]="nome" />
+
+            <input type="text" bindon-ngModel="nome" />
+
+
+            <p>Voce digitou o nome {{ nome }} </p>
+
+
+            <div>
+                <p>Meu nome é {{ pessoa.nome }} e idade de {{ pessoa.idade }}</p>
+
+                <input type="text" [(ngModel)]="pessoa.nome">
+                <input type="text" [(ngModel)]="pessoa.idade">
+            </div>
+        </div>
+    </article>
+</section>

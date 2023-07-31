@@ -1,0 +1,35 @@
+<H5>Exemplos de pipes</H5>
+<!-- Pipe transforma um valor e a gente pode mostrar esse valor transformado no template
+No angular 2 tem pipes embutidos
+Mostrar data formatada 
+Formatar objeto 
+Numeros
+Decimais
+Moedas, preços -->
+
+<!-- uppercase colocar em maiusculo
+    number
+    com os pipes do angular 2 conseguimos utilizar parametros
+    pipes de numeros decimal
+
+    aninhar pipes, colocar outros pipes
+    ordem será da declaracao dos pipes
+ -->
+<p>Titulo: {{ livro.titulo | uppercase | lowercase | camelCase }}</p>
+<p>Estrelas: {{ livro.rating | number:'1.1-1' }}</p>
+<p>Páginas: {{ livro.numeroPaginas | number }}</p>
+<!-- Moeda -->
+<p>Preço: {{ livro.preco | currency:'BRL':true }}</p>
+<!-- Pipe de data, date -->
+<p>Data Lançamento: {{ livro.dataLancamento | date }}</p>
+<p>Url: {{ livro.url }}</p>
+<br>
+<p>Livro {{ livro | json }}</p>
+
+<!-- Por padrão usamos a internacionalizacao do ingles americano -->
+
+
+<ul>
+    <!-- Aplicar um filtro nesse array, não façam isso -->
+    <li *ngFor="let liv of livros | filtroArray:'ava'"> {{ liv }}</li>
+</ul>

@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <a class="nav-item" [class.teste]="aba == 'lista'" (click)="aba = 'home'">Home</a>
+                <a class="nav-item" [class.teste]="aba == 'mapa'" (click)="aba = 'mapa'">Mapa</a>
+                <a class="nav-item" [class.teste]="aba == 'lista'" (click)="aba = 'lista'">Lista</a>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container" [ngSwitch]="aba">
+    <p *ngSwitchCase="'mapa'">mapa</p>
+    <p *ngSwitchCase="'lista'">lista</p>
+    <p *ngSwitchDefault>Home ativado</p>
+</div>
+
+
+<h5>Removendo o * e usando template</h5>
+
+<div class="container" [ngSwitch]="aba">
+    <ng-template [ngSwitchCase]="'mapa'" ]>
+        <p>mapa</p>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'lista'" ]>
+        <p>lista</p>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'home'" ] ngSwitchDefault>
+        <p>home</p>
+    </ng-template>
+</div>

@@ -1,0 +1,107 @@
+<section class="property-binding">
+    <!-- <article>
+        <h3>
+            Interpolação
+             Lendo o atributo que foi criado no componente nesse template
+            nome tem que ser o mesmo pro angular saber o que pegar 
+            <p>String renderizada com interpolação: {{ url }}</p>
+             Expressão matematica 
+            <p>Resultado de 1 + 1 é {{ 1 + 1 }}</p>
+             Chamar metodo ]
+            <p>Resultado de 1 + 1 não é {{ 1 + 1 + getValor() }}</p>
+             Expressões booleanas e lógicas 
+            <p>Curso de angular e gosto do curso: {{ cursoAngular && getCurtirCurso()}} </p>
+        </h3>
+    </article> -->
+
+    <!-- <article>
+        <h3>Property Binding(Vinculação de propriedade)</h3>
+         Vinculação da imagem que pegamos do lorem pixem para o template  
+         Conseguimos utilizar aqui a interpolação também 
+         Temos aqui uma propriedade da tag, [] o angular consegue identificar que isso é um property binding, posso colocar chamada do metodo também 
+        <img [src]="urlImagem">
+        <img [src]="urlImagem">
+         A interpolação também é uma forma de property binding, mas por exemplo na tag p não temos nenhuma propriedade pra indicar o conteudo  
+         Tem tags que não tem propriedades especificas para colocar o property binding, ai tem que ser a interpolação, mas se tiver propriedades usar o property binding 
+         Por traz disso 
+        <img bind-src="urlImagem">
+    </article> -->
+
+    <!-- <article>
+        <h3>Class e Style Binding</h3>
+         Class e style binding também são uma forma de property binding só que no lugar de trabalhar com variaveis do nosso  componente, vamos trabalhar
+        com CSS   
+
+    <div>
+        Selecione uma classe:
+         Para obter o valor desse dropDown, criar uma variavel local para acessar esse combo, para isso temos a variavel local para esse template
+            para escutar esse evento vamos utilizar o change quando o valor muda 
+        <select #classe (change)="0">
+            <option value="alert-success">Sucesso</option>
+            <option value="alert-info">Info</option>
+            <option value="alert-warning">Warning</option>
+            <option value="alert-danger">Erro</option>
+        </select>
+        <br><br>
+         conseguimos fazer a interpolação aqui no class binding tbm 
+        <div class="alert {{ classe.value }}" role="alert">
+            <p>Texto colorido conforme valor do combobox</p>
+        </div>
+
+         Vamos aplicar o class binding nessas divs para que essas divs fiquem coloridas toda vez que selecionarmos 
+         Só quero aplicar essa classe se o change classe for alert-sucess 
+        <div class="alert" role="alert" [class.alert-success]="classe.value == 'alert-success'">Sucesso</div>
+        <div class="alert" role="alert" [class.alert-info]="classe.value == 'alert-info'">Info</div>
+        <div class="alert" role="alert" [class.alert-warning]="classe.value == 'alert-warning'">Warning</div>
+        <div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger'">Erro</div>
+
+         Style binding 
+        <div class="alert alert-danger" role="alert"
+            [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
+            Esse texto somente aparece em caso de erro.
+        </div>
+
+    </div>
+    </article>-->
+
+    <!-- Escutar eventos do template e aplicar uma lógica no componente Event Binding -->
+
+    <!-- <article>
+        <h3>Event binding</h3>
+        <div>
+             Como escutar eventos no angular 
+             No angular a gente pode escutar qualquer evento que seja disparado na nossa página
+            Para usar o event binding colocamos () e no valor colocamos a lógica que queremos executar ao clicar nesse botão 
+            <button class="btn btn-primary" (click)="botaoClicado()">Me clique: </button>
+
+            <br><br>
+             keyup é toda vez que a gente digita, toda vez que a gente aperta uma tecla
+            digamos que queremos pegar o valor digitado nesse campo, podemos passar os eventos desse metodo $event 
+             Quero que salve o valor assim que apertar enter   
+            <input type="text" (keyup)="onKeyUp($event)" (keyup.enter)="salvarValor(campoInput.value)"
+                (blur)="salvarValor(campoInput.value)" #campoInput />
+
+            <p>Valor atual: {{ valorAtual }}</p>
+            <p>Valor salvo: {{ valorSalvo }}</p>
+
+            <br>
+            <span (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()" [class.highlight]="isMouseOver">
+                Passe o mouse sobre mim
+            </span>
+        </div>
+    </article> -->
+
+    <!-- <app-meu-form></app-meu-form> -->
+    <section>
+        <article>
+            <h3>Input/Output Properties</h3>
+            <!-- Reusando componente -->
+            <!-- Vamos supor que queremos passar informações desse componente data-binding pra esse app curso utilizamos o input properties
+            pra isso temos que declarar no app-curso a informação que quer receber -->
+            <app-curso [nome]='nomeDoCurso'></app-curso>
+            <!-- Para receber o valor do output 
+            precisamos passar o parametro event -->
+            <contador [valor]="valorInicial" (mudouValor)="onMudouValor($event)"></contador>
+        </article>
+    </section>
+</section>

@@ -1,0 +1,17 @@
+<p fundoAmarelo>Texto com fundo Amarelo!</p>
+<!-- Se a gente quiser que uma determinada diretiva seja aplicado a somente um tipo de tag o que fazemos é p[fundoamarelo] dentro do componente  -->
+<button fundoAmarelo>Botão com fundo amarelo</button>
+
+<br>
+<div *ngIf="mostrarCursos">Lista de Cursos aqui </div>
+<div *ngElse="mostrarCursos">
+    Não existem cursos para serem listados
+</div>
+<br>
+<button (click)="onMostrarCursos()"> Mostrar ou esconder</button>
+
+<ng-template [ngElse]="mostrarCursos">
+    <div>
+        Não existem cursos
+    </div>
+</ng-template>

@@ -1,0 +1,24 @@
+<!-- O componente da rota que voce colocou é renderizado dentro dessa tag, 
+É o que permite que o angular suporte rotas
+-->
+<nav>
+  <div class="nav-wrapper">
+    <!-- Vamos adicionar uma diretiva aqui nos nossos links(a) e dizer o path-->
+    <a class="brand-logo right" routerLink="">Rotas Ng2</a>
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <!-- A api do Angular permite que a gente aplique classes em rotas ativas  
+      Quando a rota de login ou de cursos estiver ativa, essa diretiva vai aplicar a classe active
+      -->
+      <li routerLinkActive="active"><a routerLink="/login">Login</a></li>
+      <li routerLinkActive="active"><a routerLink="/cursos">Cursos</a></li>
+      <!-- Queremos aqui passar um id, podemos usar esse router link como property binding pra gente passar informações dinamicas -->
+      <!-- Dessa forma passamos parametros, primeiro o caminho, e depois o parametro a ser passado para rota -->
+      <li routerLinkActive="active"><a [routerLink]="['curso', idCursos.value]">Curso com id</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <p>Entre com o id do curso </p>
+  <input #idCursos>
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,51 @@
+Framework da Google 
+
+Blocos principais
+
+Componentes
+Diretivas
+Roteamento
+Serviços
+Template
+MetaData
+DataBinding
+Injeção de Dependencia 
+
+Componente seria a view, o que o usuario vai ver
+O Componente encapsula
+Template: código HTML
+Metadata: Permite o angular a ler as classes e fazer o processamento das mesmas
+DataBinding: Associação dos dados que temos no nosso componente para o template
+Alem de mostrar dados o componente também é responsavel pelo comportamento da view 
+Componente é a junção do template código html, o controller responsavel pelo comportamente da view e 
+escopo grande responsavel pelo data binding
+
+Uma aplicação angular 2 é totalmente orientada a componente
+Temos componente pai ou mae, raiz, que vai ter tudo que tem na aplicação, outros componentes
+
+Pra escrever código de lógicas de negocio utilizamos o serviço e também se comunicar com o back-end, o serviço pode ser injetado em outras classes
+
+
+Router: Responsavel pela navegação
+Single page Aplicattion, aplicações de uma página só, podemos ter telas diferentes.
+
+Diretivas, é responsavel por modificar elementos DOM ou sem comportamente
+
+Nossa aplicação podemos ter modulos
+
+Para criar o projeto com Angular CLI é ng new nome-projeto
+
+Para servir nosso código ao browser colocar ng serve
+
+O angular CLI já tem um live reload
+
+Para criar um component com angular cli é ng g c nome-component
+
+
+-----------------------------------------------------------------------------------
+Modulos o que são? 
+
+É aquele arquivo que vai ajudar a organizar a nossa aplicação e a modularizar 
+Com o uso de modulos voce pode escolher o que expor para fora do modulo ou seja para outros modulos da sua aplicação
+
+Para criar um modulo com angular cli é ng g m nome-modulo

@@ -1,0 +1,45 @@
+<h5>*ngIf</h5>
+
+<!-- Quero mostrar o conteudo da div somente se tiver elementos dentro do array cursos -->
+<div *ngIf="cursos.length > 0">Lista de Cursos aqui </div>
+
+<div *ngIf="cursos.length == 0">
+    Não existem cursos para serem listados
+</div>
+
+<div *ngIf="mostrarCursos">Lista de Cursos aqui </div>
+
+<!-- Se não tiver mostrar cursos -->
+<div *ngIf="!mostrarCursos">
+    Não existem cursos para serem listados
+</div>
+
+<br>
+
+<button (click)="onMostrarCursos()"> Mostrar ou esconder</button>
+
+
+<h5>hidden como alternativa</h5>
+
+<div [hidden]="!mostrarCursos">Lista de Cursos aqui </div>
+
+<div [hidden]="mostrarCursos">
+    Não existem cursos para serem listados
+</div>
+
+<!-- Hidden recomendado para arvore pequena
+ngIf recomendado para arvore grande
+-->
+
+<!-- Como que o angular traduz o *, por traz dos panos ele faz isso -->
+<h5>Removendo o * e usando template</h5>
+
+<ng-template [ngIf]="mostrarCursos">
+    <div>
+        Lista de cursos aqui
+    </div>
+</ng-template>
+
+<div template="ngIf mostrarCursos">
+    Lista de cursos aqui
+</div>

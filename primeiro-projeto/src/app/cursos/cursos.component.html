@@ -1,0 +1,13 @@
+<!-- Pra gente poder acessar a variavel que está no nosso código js, dentro do componente utilizamos a interpolação -->
+<p>
+    Lista de cursos do portal {{ nomePortal }}
+</p>
+
+<app-curso-detalhe></app-curso-detalhe>
+
+<!-- Listar cursos -->
+
+<!-- Diretiva ngFor, trabalhar com templates do angular -->
+<ul *ngFor="let curso of cursos">
+    <li>{{ curso }}</li>
+</ul>

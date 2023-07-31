@@ -1,0 +1,11 @@
+<div class="panel panel-default">
+    <!-- Passar mais conteudos -->
+    <div class="panel-heading">
+        <!-- Para diferenciar qual conteudo que está sendo passado é os seletores -->
+        <ng-content select=".titulo"></ng-content>
+    </div>
+    <div class="panel-body">
+        <!-- Passar um conteudo do componente pai que usa esse componente cá, as vezes não da pra passar por input property precisamos de passar conteudo -->
+        <ng-content select=".corpo"></ng-content>
+    </div>
+</div>

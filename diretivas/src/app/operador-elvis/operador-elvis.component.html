@@ -1,0 +1,9 @@
+<p>Descrição: {{ tarefa.desc }}</p>
+<!-- Está esperando essa informação mas não vem -->
+<!-- <p>Responsável: {{ tarefa.responsavel.nome }}</p> -->
+<!-- Aqui resolve o problema verifica se é diferente se for coloca se não coloca vazio -->
+<p>Responsável: {{ tarefa.responsavel != null ? tarefa.responsavel.nome : '' }}</p>
+
+<!-- Operador Elvis quando eu coloco essa interrogação depois da variavel ou objeto que pode ter valor nome, ele fez a lógica parecida com a de cima é nullo? então não mostra
+Se for -->
+<p>Responsável: {{ tarefa.responsavel?.usuario?.nome }}</p>
